@@ -1,25 +1,23 @@
 //All Api related with task will be here
 
 const express = require('express');
+const taskController = require('../controller/task.controller');
 const router = express.Router()
 //express Router
 
-router.post('/tasks', (req, res) => {
-    res.send("create task");
-});
+router.post('/', taskController.createTask);
 //build first router "Post" /w callback Function
+//CRUD의 C, Create
 
-router.get('/tasks', (req, res) => {
-    res.send("get tasks");
-})
+router.get('/', taskController.getTask);
 //second router "Get", read task
 
-router.put('/tasks/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     res.send("update task");
 })
 //third router "put", Update task status, "/:id"=> Declare id to each task
 
-router.delete('/tasks/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     res.send("delete task");
 })
 //last router "delete", delete each task, Also Give id value for task 
