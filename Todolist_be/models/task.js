@@ -8,7 +8,7 @@ const taskSchema = Schema({
         type: String,
         required: true
     },
-    status:{
+    isComplete:{
         type : Boolean,
         required: true
     }
