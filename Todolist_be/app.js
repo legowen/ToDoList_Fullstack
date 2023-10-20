@@ -21,7 +21,7 @@ const mongoURI = `mongodb://localhost:27017/todoDemo`
 mongoose
     .connect(mongoURI, {useNewUrlParser:true})
     .then(() => { 
-        console.log('mongoose connected');
+        console.log("mongoose connected");
     })
     .catch((error) => {
         console.log("DB connection fail", error);
@@ -29,5 +29,5 @@ mongoose
 //connect with mongoose, "useNewUrlParser => Make sure to accept new form of Mongodb"
 
 app.listen(5010, () => {
-    console.log("server on 5000");
+    console.log("server on 5010");
 });
