@@ -2,6 +2,8 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
+const cors = require("cors");
+
 const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
@@ -11,6 +13,9 @@ const indexRouter = require("./routes/index");
 const app = express();
 app.use(bodyParser.json());
 // parser application/json
+
+app.use(cors());
+// use cors
 
 app.use("/api", indexRouter)
 //App using indexRouter, Unneccessary, but for make sure it's api
