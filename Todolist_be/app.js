@@ -9,8 +9,14 @@ const bodyParser = require("body-parser");
 const indexRouter = require("./routes/index");
 //Connect Router
 
+require("dotenv").config();
+//dotenv
+
 //setup express
 const app = express();
+
+const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD;
+
 app.use(bodyParser.json());
 // parser application/json
 
@@ -21,7 +27,7 @@ app.use("/api", indexRouter)
 //App using indexRouter, Unneccessary, but for make sure it's api
 
 
-const mongoURI = `mongodb://localhost:27017/todoDemo`
+const mongoURI = MONGODB_URI_PROD;
 
 mongoose
     .connect(mongoURI, {useNewUrlParser:true})
