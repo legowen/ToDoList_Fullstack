@@ -43,7 +43,9 @@ userController.loginWithEmail = async (req, res) => {
     throw new Error("The username or password you entered is incorrect");
     // 틀리면 Error msg sent
   } catch (error) {
-    res.status(400).json({ status: "fail", error });
+    // res.status(400).json({ status: "fail", error });
+    // 원래 코드를 밑으로 바꿈. => Error가 나왔을시 object를 통째로 가져오는 대신 메시지만 보여주게 하기위해
+    res.status(400).json({ status: "fail", message: error.message });
   }
 };
 
