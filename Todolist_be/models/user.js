@@ -27,6 +27,8 @@ const userSchema = Schema(
 userSchema.methods.toJSON = function () {
   const obj = this._doc;
   delete obj.password;
+  delete obj.updatedAt;
+  delete obj.__v;
   return obj;
 }; // 한시적으로가 아닌 쭉 password 보안을 위해 데이터가 안보이게 하기위함
 // obj = object (_doc(_id, name, email, password))
