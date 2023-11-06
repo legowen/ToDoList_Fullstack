@@ -11,7 +11,7 @@ import api from "./utils/api";
 function App() {
   const [user, setUser] = useState(null);
 
-  const getUser = async () => {
+  const getUser = async() => {
     try {
       const storedToken = sessionStorage.getItem("token");
       if (storedToken) {
