@@ -34,7 +34,9 @@ userSchema.methods.toJSON = function () {
 // obj = object (_doc(_id, name, email, password))
 
 userSchema.methods.generateToken = function () {
-  var token = jwt.sign({ _id: this._id }, JWT_SECRET_KEY, { expiresIn: "1d" }); //expiredIn : create Token's expired day
+  const token = jwt.sign({ _id: this._id }, JWT_SECRET_KEY, {
+    expiresIn: "1d",
+  }); //expiredIn : create Token's expired day
   return token;
 }; // Generate Token
 
