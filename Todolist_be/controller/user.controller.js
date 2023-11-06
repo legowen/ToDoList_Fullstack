@@ -49,7 +49,7 @@ userController.loginWithEmail = async (req, res) => {
   }
 };
 
-userController.getUser = async (req, res) => {
+userController.getUser = async(req, res) => {
   try {
     const { userId } = req; //req.userId
     const user = User.findById(userId);
