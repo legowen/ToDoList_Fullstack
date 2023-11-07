@@ -11,16 +11,19 @@ import api from "./utils/api";
 function App() {
   const [user, setUser] = useState(null);
 
-  const getUser = async() => {
+  //getUser => get User info through token
+  const getUser = async () => {
     try {
       const storedToken = sessionStorage.getItem("token");
       if (storedToken) {
         const response = await api.get("/user/me");
-        console.log("rrrr", response);
-        // api.defaults.headers["authorization"] = "Bearer " + storedToken;
+        setUser(response.data.use);
+        // api.defaults.headers["authorization"] = "Bearer " +storedToken;
         // => api.js
       }
-    } catch (error) {}
+    } catch (error) {
+      setUser(null);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +41,10 @@ function App() {
         }
       />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/login"
+        element={<LoginPage user={user} setUser={setUser} />}
+      />
     </Routes>
   );
 }
