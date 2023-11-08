@@ -1,11 +1,12 @@
 //All Api related with task will be here
 
 const express = require("express");
+const authController = require("../controller/auth.controller");
 const taskController = require("../controller/task.controller");
 const router = express.Router();
 //express Routers
 
-router.post("/", taskController.createTask);
+router.post("/", authController.authenticate, taskController.createTask);
 //router.post("/", (req, res) => { res.send("post tesk")}) => old code
 //build first router "Post" /w callback Function
 //CRUD의 C, Create
@@ -20,22 +21,9 @@ router.delete("/:id", taskController.deleteTask);
 // router.delete("/:id", (req, res) => {
 //     res.send("delete task");
 // })
-//last router "delete", delete each task, Also Give id value for task 
+//last router "delete", delete each task, Also Give id value for task
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //First Router Code that I wrote on index.js
 // And organize it.
@@ -62,7 +50,7 @@ module.exports = router;
 // router.delete('/tasks/:id', (req, res) => {
 //     res.send("delete task");
 // })
-// //last router "delete", delete each task, Also Give id value for task 
+// //last router "delete", delete each task, Also Give id value for task
 
 // module.exports = router;
 // //export router module to use
