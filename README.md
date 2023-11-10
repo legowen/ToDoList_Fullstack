@@ -11,9 +11,10 @@
 ![Mongoose](https://img.shields.io/badge/-Mongoose-6B8E23?style=for-the-badge&logo=Mongoose)
 
 ## Function
-* Login Page
-* Register Page
-* Todo List - Add daily todo List.
+* Login Page - Login with saved user data 
+* Register Page - Save the user info
+* Todo List - Display different tasks by user     
+            - Add daily todo List.
             - Check ongoing, Done.
             - Delete task.
 * Save the user data in database - Safely with Token
