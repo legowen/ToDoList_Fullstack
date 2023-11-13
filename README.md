@@ -1,6 +1,6 @@
 # To Do List Fullstack
 - Developing FE (using ReactJS) and BE (using NodeJS), set up Database with MongoDB 
-* Demo: Project ongoing
+* Demo: 
 
 ## Tech
 ![React](https://img.shields.io/badge/-React-222222?style=for-the-badge&logo=react)
