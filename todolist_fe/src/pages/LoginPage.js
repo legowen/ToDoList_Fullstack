@@ -38,7 +38,7 @@ const LoginPage = ({user, setUser}) => {
     <div className="display-center">
       {error && <div className="red-error">{error}</div>}
       <Form className="login-box" onSubmit={handleLogin}>
-        <h1>Login</h1>
+        <h1>Sign In</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -58,10 +58,10 @@ const LoginPage = ({user, setUser}) => {
         </Form.Group>
         <div className="button-box">
           <Button type="submit" className="button-primary">
-            Login
+            Sign In
           </Button>
           <span>
-            Register? <Link to="/register">Sign In</Link>
+            Register? <Link to="/register">Register!</Link>
           </span>
         </div>
       </Form>
