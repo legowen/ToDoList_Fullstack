@@ -11,6 +11,7 @@ const TodoPage = () => {
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
+    
     setTodoList(response.data.data);
   };
   useEffect(() => {
@@ -62,7 +63,7 @@ const TodoPage = () => {
         <Col xs={12} sm={10}>
           <input
             type="text"
-            placeholder="할일을 입력하세요"
+            placeholder="What you going to make your day?"
             onChange={(event) => setTodoValue(event.target.value)}
             className="input-box"
             value={todoValue}
@@ -70,7 +71,7 @@ const TodoPage = () => {
         </Col>
         <Col xs={12} sm={2}>
           <button onClick={addTodo} className="button-add">
-            추가
+            Add
           </button>
         </Col>
       </Row>
